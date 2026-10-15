@@ -1,21 +1,21 @@
 ---
-title: "Title"
-author: "Author"
-date: last-modified
-abstract: |
-  Abstract.
+title: "Research Paper"
+format:
+  html: default
+  pdf: default
 bibliography: references.bib
 ---
 
-## Introduction
+# Introduction
 
-## Methods
+# Related Work
 
-## Results
+# Method
 
-## Discussion
+# Results
 
-## References {.unnumbered}
+# Discussion
 
-::: {#refs}
-:::
+# Threats to Validity
+
+# Conclusion

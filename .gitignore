@@ -12,11 +12,13 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Quarto
-.quarto/
+/.quarto/
 *.quarto_ipynb
 /paper/index.html
 /paper/index.pdf
 /paper/index.docx
+/paper/index.tex
+/paper/index.log
 /paper/index_files/
 /docs/*.html
 /docs/*_files/

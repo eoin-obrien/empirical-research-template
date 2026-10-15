@@ -1,0 +1,7 @@
+project:
+  render:
+    - docs/*.qmd
+    - paper/index.qmd
+
+metadata-files:
+  - results/variables.yml

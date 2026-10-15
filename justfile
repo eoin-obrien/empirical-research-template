@@ -17,7 +17,10 @@ test:
 
 check: lint test
 
-render:
+values:
+    uv run python scripts/generate_example_results.py
+
+render: values
     quarto render
 
 all: check render
