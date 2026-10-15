@@ -21,6 +21,27 @@ build-backend = "uv_build"
 [tool.uv.build-backend]
 module-name = "research"
 
+[tool.ruff.lint]
+extend-select = [
+    "B",   # flake8-bugbear
+    "I",   # isort
+    "NPY", # NumPy-specific, incl. legacy global RNG
+    "PT",  # flake8-pytest-style
+    "RUF", # Ruff-specific
+    "SIM", # flake8-simplify
+    "UP",  # pyupgrade
+]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]
+
+[tool.pytest]
+testpaths = ["tests"]
+addopts = ["-ra", "--import-mode=importlib"]
+strict = true
+filterwarnings = ["error"]
+
 [dependency-groups]
 dev = [
     "mypy>=2.4.0",
