@@ -18,7 +18,7 @@ test:
 check: lint test
 
 values:
-    uv run python scripts/generate_example_results.py
+    uv run python scripts/generate_variables.py
 
 render: values
     quarto render

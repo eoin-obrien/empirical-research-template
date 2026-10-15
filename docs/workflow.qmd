@@ -31,9 +31,17 @@ uv run mypy
 uv run pytest
 ```
 
-## Generated values example
+## Values in the manuscript
 
-Disposable. The values below come from `results/variables.yml`, written by
-`scripts/generate_example_results.py`.
+Numbers cited in prose are generated, not typed.
 
-The example has n = {{< meta example.n >}} and mean = {{< meta example.mean >}}.
+1. Return the value from `collect()` in `scripts/generate_variables.py`,
+   computed from `results/derived/` through `research`. Round and format it
+   there.
+2. Run `just values` to write `results/variables.yml`. `just render` does
+   this first.
+3. Cite it with `{{{< meta key >}}}`, for example
+   `{{{< meta sample.n >}}}`. Nested keys use dots.
+
+A missing or misspelled key does not fail the build. It renders as
+`?meta:key` and Quarto prints a warning.
