@@ -1,0 +1,21 @@
+---
+title: "Title"
+author: "Author"
+date: last-modified
+abstract: |
+  Abstract.
+bibliography: references.bib
+---
+
+## Introduction
+
+## Methods
+
+## Results
+
+## Discussion
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

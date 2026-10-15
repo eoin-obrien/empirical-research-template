@@ -1,0 +1,16 @@
+---
+title: "Decisions"
+---
+
+A dated log of decisions that affect the results. Add new entries at the
+bottom and do not edit old ones. If a decision is reversed, add a new entry
+that points back to the original.
+
+## Template
+
+### YYYY-MM-DD: Short title
+
+- **Decision:**
+- **Context:**
+- **Alternatives considered:**
+- **Consequences:**

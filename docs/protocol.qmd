@@ -1,0 +1,21 @@
+---
+title: "Protocol"
+---
+
+The study plan, written before the analysis is run. Record any later
+changes under [Deviations](#deviations) instead of rewriting the plan.
+
+## Research question
+
+## Hypotheses
+
+## Data
+
+## Design
+
+## Analysis plan
+
+## Deviations
+
+| Date | Change | Reason |
+| ---- | ------ | ------ |

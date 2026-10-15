@@ -10,11 +10,14 @@ requires-python = ">=3.13"
 dependencies = []
 
 [project.scripts]
-empirical-research-template = "empirical_research_template:main"
+empirical-research-template = "research:main"
 
 [build-system]
 requires = ["uv_build>=0.9.10,<0.10.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "research"
 
 [dependency-groups]
 dev = [

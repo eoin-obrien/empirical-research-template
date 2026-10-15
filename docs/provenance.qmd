@@ -1,0 +1,25 @@
+---
+title: "Provenance"
+---
+
+Where every input came from and how every result was produced.
+
+## Data sources
+
+One entry per file or dataset in `data/external/`.
+
+| Dataset | Source | Version or access date | Licence | Checksum |
+| ------- | ------ | ---------------------- | ------- | -------- |
+
+## Software environment
+
+The Python environment is pinned by `uv.lock`, and the Python version by
+`.python-version`. Record any tool not managed by uv here, with its version.
+
+## Results
+
+For each table and figure in `results/`, record the code that produces it
+and the inputs it reads.
+
+| Output | Produced by | Inputs |
+| ------ | ----------- | ------ |

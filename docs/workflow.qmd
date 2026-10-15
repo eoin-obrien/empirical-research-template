@@ -1,0 +1,32 @@
+---
+title: "Workflow"
+---
+
+How the project goes from inputs to the paper.
+
+## Stages
+
+1. **Acquire:** place source data in `data/external/` and record it in
+   `provenance.qmd`.
+2. **Prepare:** transform it through `data/interim/` into `data/processed/`.
+3. **Analyse:** run the analysis, writing to `results/raw/`, then compute
+   `results/derived/`.
+4. **Report:** generate `results/tables/` and `results/figures/`.
+5. **Write:** render the paper in `paper/` from those tables and figures.
+
+Each stage runs from code in `src/research/` or `scripts/`, never from a
+notebook.
+
+## Environment
+
+```sh
+uv sync
+```
+
+## Checks
+
+```sh
+uv run ruff check
+uv run mypy
+uv run pytest
+```
