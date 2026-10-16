@@ -34,7 +34,7 @@ extend-select = [
 
 [tool.mypy]
 strict = true
-files = ["src", "tests", "scripts"]
+files = ["src", "tests", "scripts", ".claude/hooks"]
 
 [tool.pytest]
 testpaths = ["tests"]
