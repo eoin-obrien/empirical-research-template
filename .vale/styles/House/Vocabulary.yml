@@ -1,0 +1,16 @@
+# Words common in machine-generated prose. Often fine; check each use.
+extends: existence
+message: "'%s' is a common stock word; is it the precise one?"
+level: warning
+ignorecase: true
+tokens:
+  - crucial(ly)?
+  - pivotal
+  - underscor(e|es|ed|ing)
+  - delv(e|es|ed|ing)
+  - showcas(e|es|ed|ing)
+  - tapestry
+  - multifaceted
+  - a testament to
+  - in the realm of
+  - plays? an? (key|vital|crucial|pivotal) role

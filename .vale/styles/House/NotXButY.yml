@@ -1,0 +1,7 @@
+# The emphatic "not X but Y" construction.
+extends: existence
+message: "'%s': check whether the 'not X but Y' contrast is needed."
+level: warning
+ignorecase: true
+tokens:
+  - '\bnot (just |only |merely )?\w+(\s\w+){0,3},? but\b'

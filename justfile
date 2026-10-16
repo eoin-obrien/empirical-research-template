@@ -15,6 +15,9 @@ lint:
 test:
     uv run pytest
 
+prose:
+    vale --glob='*.{md,qmd}' paper docs
+
 check: lint test
 
 values:

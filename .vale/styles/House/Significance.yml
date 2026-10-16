@@ -1,0 +1,11 @@
+# Generic significance claims. State the specific consequence instead.
+extends: existence
+message: "Generic significance claim '%s'; state the specific consequence."
+level: warning
+ignorecase: true
+tokens:
+  - (important|significant|broader|far-reaching) implications
+  - sheds? (new )?light on
+  - opens? (up )?(new )?avenues
+  - valuable insights?
+  - (better|deeper) understanding of

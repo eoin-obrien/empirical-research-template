@@ -1,0 +1,8 @@
+# Sentence-initial stock transitions. Show the logical relation instead.
+extends: existence
+message: "Stock transition '%s'; show the logical relation or drop it."
+level: warning
+ignorecase: false
+nonword: true
+tokens:
+  - '\b(Moreover|Furthermore|Additionally|Notably|Importantly|Overall|In conclusion),'

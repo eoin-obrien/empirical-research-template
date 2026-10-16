@@ -1,0 +1,11 @@
+# Phrases that add no content. Delete them; the sentence survives.
+extends: existence
+message: "Remove '%s'; it adds no content."
+level: error
+ignorecase: true
+tokens:
+  - it is worth noting( that)?
+  - it should be noted( that)?
+  - it is important to note( that)?
+  - needless to say
+  - it goes without saying

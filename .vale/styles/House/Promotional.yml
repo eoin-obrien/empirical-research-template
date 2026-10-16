@@ -1,0 +1,10 @@
+# Promotional language with no place in a research claim.
+extends: existence
+message: "Avoid promotional '%s'; state the specific result."
+level: error
+ignorecase: true
+tokens:
+  - game[- ]chang(er|ing)
+  - groundbreaking
+  - paves? the way
+  - paving the way
