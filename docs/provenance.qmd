@@ -4,6 +4,14 @@ title: "Provenance"
 
 Where every input came from and how every result was produced.
 
+## Manifest
+
+`provenance.yml` holds the machine-readable record: project, template
+version, sources and the protocol freeze. `just freeze-protocol` hashes the
+files listed under `protocol.files`, records the time and the commit, and
+refuses to run twice. After the freeze, `just check` fails if a frozen file
+changes; record changes as deviations in `protocol.qmd` instead.
+
 ## Data sources
 
 One entry per file or dataset in `data/external/`.

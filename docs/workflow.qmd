@@ -31,6 +31,22 @@ uv run mypy
 uv run pytest
 ```
 
+## References
+
+`paper/references.bib` is a controlled artifact. New entries are added
+deliberately, never while drafting.
+
+1. Export the entry from an authoritative record: the DOI resolver, the
+   publisher or a reference manager. For a DOI,
+   `curl -LH "Accept: application/x-bibtex" https://doi.org/<doi>`.
+   Never type an entry from memory.
+2. Add it as its own change and compare it with the source: authors, title,
+   year, venue, DOI.
+3. Run `just check`. It verifies that the file parses, keys are unique, every
+   citation resolves and DOIs are well formed.
+
+While drafting, mark a missing source as `[CITATION NEEDED: <what>]`.
+
 ## Values in the manuscript
 
 Numbers cited in prose are generated, not typed.

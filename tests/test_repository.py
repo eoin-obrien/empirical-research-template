@@ -14,6 +14,7 @@ REQUIRED_FILES = [
     "_quarto.yml",
     "justfile",
     "pyproject.toml",
+    "provenance.yml",
     "uv.lock",
     ".python-version",
     ".claude/settings.json",

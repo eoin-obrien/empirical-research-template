@@ -20,6 +20,9 @@ prose:
 
 check: lint test
 
+freeze-protocol:
+    uv run python scripts/freeze_protocol.py
+
 values:
     uv run python scripts/generate_variables.py
 

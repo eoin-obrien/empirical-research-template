@@ -6,6 +6,8 @@ These rules are invariants. If a task would break one, stop and ask.
 
 - Never fabricate data, results, references, quotations or metadata. If
   something is unknown, say so.
+- Add entries to `paper/references.bib` only through the reference workflow
+  in `docs/workflow.qmd`. Never write BibTeX while drafting prose.
 - Never change models, exclusions, metrics or hypotheses to obtain a desired
   result. Record every such change, with its reason, in `docs/decisions.qmd`.
 - Keep exploratory and confirmatory analyses distinct. Never present an

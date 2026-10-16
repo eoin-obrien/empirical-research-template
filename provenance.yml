@@ -1,0 +1,12 @@
+project:
+  title: null
+  started: null
+template:
+  version: null
+sources: []
+protocol:
+  files:
+  - docs/protocol.qmd
+  frozen_at: null
+  git_commit: null
+  sha256: {}
