@@ -1,6 +1,24 @@
 {
   "permissions": {
-    "deny": ["Edit(/data/external/**)"]
+    "deny": ["Edit(/data/external/**)"],
+    "ask": [
+      "Edit(/AGENTS.md)",
+      "Edit(/CLAUDE.md)",
+      "Edit(/LICENSING.md)",
+      "Edit(/provenance.yml)",
+      "Edit(/protocol/manifest.toml)",
+      "Edit(/protocol/lock.json)",
+      "Edit(/justfile)",
+      "Edit(/.claude/settings.json)",
+      "Edit(/.claude/settings.local.json)",
+      "Edit(/.claude/hooks/**)",
+      "Edit(/.github/**)",
+      "Edit(/tests/conftest.py)",
+      "Edit(/tests/integrity/**)",
+      "Edit(/scripts/protocol_lock.py)",
+      "Edit(/scripts/check_manuscript.py)",
+      "Edit(/scripts/check_notebooks.py)"
+    ]
   },
   "hooks": {
     "PreToolUse": [
@@ -9,8 +27,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3",
-            "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/protect_external.py"],
+            "command": "uv",
+            "args": [
+              "run",
+              "--project",
+              "${CLAUDE_PROJECT_DIR}",
+              "--no-sync",
+              "python",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/protect_external.py"
+            ],
             "onFailure": "block"
           }
         ]
@@ -22,8 +47,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3",
-            "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/ruff_changed.py"]
+            "command": "uv",
+            "args": [
+              "run",
+              "--project",
+              "${CLAUDE_PROJECT_DIR}",
+              "--no-sync",
+              "python",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/ruff_changed.py"
+            ]
           }
         ]
       }
@@ -33,8 +65,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3",
-            "args": ["${CLAUDE_PROJECT_DIR}/.claude/hooks/stop_check.py"]
+            "command": "uv",
+            "args": [
+              "run",
+              "--project",
+              "${CLAUDE_PROJECT_DIR}",
+              "--no-sync",
+              "python",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/stop_check.py"
+            ]
           }
         ]
       }

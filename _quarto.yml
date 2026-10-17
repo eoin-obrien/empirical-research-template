@@ -1,6 +1,7 @@
 project:
   render:
     - docs/*.qmd
+    - docs/amendments/*.qmd
     - paper/index.qmd
 
 metadata-files:

@@ -8,14 +8,8 @@ bibliography: references.bib
 
 # Introduction
 
-# Related Work
-
-# Method
+# Methods
 
 # Results
 
 # Discussion
-
-# Threats to Validity
-
-# Conclusion

@@ -2,32 +2,28 @@
 title: "Provenance"
 ---
 
-Where every input came from and how every result was produced.
+Where every input came from and how every result was produced. The values
+live in machine-readable files; this page says where, and does not repeat
+them.
 
-## Manifest
+## Data sources and outputs
 
-`provenance.yml` holds the machine-readable record: project, template
-version, sources and the protocol freeze. `just freeze-protocol` hashes the
-files listed under `protocol.files`, records the time and the commit, and
-refuses to run twice. After the freeze, `just check` fails if a frozen file
-changes; record changes as deviations in `protocol.qmd` instead.
+`provenance.yml` is the single record. It lists each file in
+`data/external/` under `sources`, with its origin, version or access date,
+licence and SHA-256 checksum, and each output the paper uses under
+`outputs`, with the code that produces it and the inputs it reads.
+`just verify` fails if a file in `data/external/` is unrecorded or no longer
+matches its checksum.
 
-## Data sources
+## Protocol
 
-One entry per file or dataset in `data/external/`.
-
-| Dataset | Source | Version or access date | Licence | Checksum |
-| ------- | ------ | ---------------------- | ------- | -------- |
+`protocol/manifest.toml` lists the frozen protocol files. `protocol/lock.json`,
+written only by `just freeze-protocol`, records when they were frozen, the
+commit and their SHA-256 hashes. Changes after the freeze are recorded in
+`docs/amendments/`.
 
 ## Software environment
 
-The Python environment is pinned by `uv.lock`, and the Python version by
-`.python-version`. Record any tool not managed by uv here, with its version.
-
-## Results
-
-For each table and figure in `results/`, record the code that produces it
-and the inputs it reads.
-
-| Output | Produced by | Inputs |
-| ------ | ----------- | ------ |
+`uv.lock` pins the Python environment and `.python-version` the Python
+version. The versions of uv, just and Quarto used for verification are
+pinned in `.github/workflows/check.yml`.

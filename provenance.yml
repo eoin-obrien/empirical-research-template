@@ -1,12 +1,22 @@
+# The single machine-readable record of provenance. See docs/provenance.qmd.
+# `just verify` checks every file in data/external/ against `sources`.
 project:
   title: null
-  started: null
+  started: null      # YYYY-MM-DD
 template:
-  version: null
+  source: null       # repository the project was created from
+  commit: null       # template commit it was created from
+
+# One entry per file in data/external/:
+#   - path: data/external/<file>
+#     origin: <URL, DOI or description of where it came from>
+#     version: <version or access date>
+#     licence: <licence of the data>
+#     sha256: <output of `sha256sum`>
 sources: []
-protocol:
-  files:
-  - docs/protocol.qmd
-  frozen_at: null
-  git_commit: null
-  sha256: {}
+
+# One entry per table, figure or other output the paper uses:
+#   - path: results/figures/<name>.pdf
+#     produced_by: scripts/figure_<name>.py
+#     inputs: [results/derived/<file>]
+outputs: []

@@ -1,18 +1,11 @@
 [project]
 name = "empirical-research-template"
 version = "0.1.0"
-description = "Add your description here"
 readme = "README.md"
 license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
-authors = [
-    { name = "Eoin O'Brien", email = "eoinobrien910@gmail.com" }
-]
 requires-python = ">=3.13"
 dependencies = []
-
-[project.scripts]
-empirical-research-template = "research:main"
 
 [build-system]
 requires = ["uv_build>=0.9.10,<0.10.0"]
@@ -25,7 +18,6 @@ module-name = "research"
 extend-select = [
     "B",   # flake8-bugbear
     "I",   # isort
-    "NPY", # NumPy-specific, incl. legacy global RNG
     "PT",  # flake8-pytest-style
     "RUF", # Ruff-specific
     "SIM", # flake8-simplify
@@ -37,7 +29,7 @@ strict = true
 files = ["src", "tests", "scripts", ".claude/hooks"]
 
 [tool.pytest]
-testpaths = ["tests"]
+testpaths = ["tests/unit"]  # `just verify` runs tests/integrity
 addopts = ["-ra", "--import-mode=importlib"]
 strict = true
 filterwarnings = ["error"]

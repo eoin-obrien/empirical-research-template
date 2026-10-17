@@ -1,7 +1,9 @@
 name: check
 
+# Branch pushes are checked through their pull request, so each change runs once.
 on:
   push:
+    branches: [main]
   pull_request:
 
 permissions:
@@ -11,17 +13,18 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: astral-sh/setup-uv@v10.3.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # protocol verification reads the frozen commit
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
         with:
           version: "0.9.10"
-      - uses: extractions/setup-just@v4.0.0
+      - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0
         with:
           just-version: "1.59.0"
-      - uses: quarto-dev/quarto-actions/setup@v2.2.0
+      - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2.2.0
         with:
           version: "1.6.43"
-          tinytex: true
       - run: uv sync --locked
       - run: just check
-      - run: just render
+      - run: just verify

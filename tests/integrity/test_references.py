@@ -20,12 +20,16 @@ CROSSREF_PREFIXES = (
 DOI = re.compile(r"^10\.\d{4,9}/\S+$")
 
 
+class PandocError(Exception):
+    """Pandoc rejected its input."""
+
+
 def pandoc(*args: str) -> Any:
     result = subprocess.run(
         ["quarto", "pandoc", *args], capture_output=True, text=True, check=False
     )
     if result.returncode != 0:
-        raise ValueError(result.stderr.strip())
+        raise PandocError(result.stderr.strip())
     return json.loads(result.stdout)
 
 
@@ -76,7 +80,11 @@ def test_citekeys_are_unique(entries: list[dict[str, Any]]) -> None:
 
 
 def test_every_citation_resolves(root: Path, entries: list[dict[str, Any]]) -> None:
-    documents = sorted([*root.glob("paper/**/*.qmd"), *root.glob("docs/**/*.qmd")])
+    documents = sorted(
+        p
+        for p in [*root.glob("paper/**/*.qmd"), *root.glob("docs/**/*.qmd")]
+        if not p.name.startswith("_")
+    )
     missing = cited_keys(documents) - {e["id"] for e in entries}
     assert missing == set(), "cited keys missing from paper/references.bib"
 
@@ -91,7 +99,8 @@ def test_dois_are_well_formed(entries: list[dict[str, Any]]) -> None:
 def test_malformed_bibtex_is_rejected(tmp_path: Path) -> None:
     bib = tmp_path / "bad.bib"
     bib.write_text("@article{bad,\n  title = {Unclosed\n")
-    with pytest.raises(ValueError, match="unexpected end of input"):
+    # Match the failure, not Pandoc's message, which varies between versions.
+    with pytest.raises(PandocError):
         bib_entries(bib)
 
 

@@ -9,7 +9,8 @@
 ## Rules
 
 - `external/`: add files only. Never modify, overwrite or delete them in place.
-  Record each file in `docs/provenance.qmd`.
+  Record each file, with its SHA-256 checksum, in `provenance.yml`;
+  `just verify` checks them.
 - `interim/`, `processed/`: write only from code in `src/research/` or
   `scripts/`. Every file must be regenerable from `external/`.
 - Never edit a generated file by hand. Change the code and regenerate.

@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from empirical-research-template!")
+"""Canonical analysis code for this project. See AGENTS.md."""

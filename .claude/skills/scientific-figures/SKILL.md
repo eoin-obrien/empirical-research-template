@@ -17,7 +17,7 @@ annotations added in code are fine.
 
 **Traceable source data.** A figure script reads only from
 `results/derived/` or `data/processed/`. Record each figure, its script and
-its inputs in the results table of `docs/provenance.qmd`.
+its inputs under `outputs` in `provenance.yml`.
 
 **Explicit axes and units.** Label every axis with the quantity and its unit.
 State transformations (log scale, normalisation, truncated or broken axes) on
@@ -42,8 +42,8 @@ plotting theme or helper module unless several figures need the same code.
 - One script per figure, `scripts/figure_<name>.py`, calling plotting code
   in `src/research/` when it is shared.
 - Output to `results/figures/<name>.<ext>`.
-- Write numbers cited from the figure into `results/variables.yml` through
-  `scripts/generate_variables.py`, not by reading values off the plot.
+- Write numbers cited from the figure into `results/variables.yml` from the
+  analysis code, not by reading values off the plot.
 
 ## Before finishing
 

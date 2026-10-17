@@ -22,6 +22,8 @@ __pycache__/
 /paper/index_files/
 /docs/*.html
 /docs/*_files/
+/docs/amendments/*.html
+/docs/amendments/*_files/
 
 # Claude Code (personal, not shared)
 .claude/settings.local.json

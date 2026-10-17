@@ -39,10 +39,15 @@ def stop_check() -> ModuleType:
 
 
 @pytest.fixture(scope="session")
-def generator() -> ModuleType:
-    return load_module("scripts/generate_variables.py")
+def protocol_lock() -> ModuleType:
+    return load_module("scripts/protocol_lock.py")
 
 
 @pytest.fixture(scope="session")
-def freezer() -> ModuleType:
-    return load_module("scripts/freeze_protocol.py")
+def manuscript() -> ModuleType:
+    return load_module("scripts/check_manuscript.py")
+
+
+@pytest.fixture(scope="session")
+def notebooks() -> ModuleType:
+    return load_module("scripts/check_notebooks.py")

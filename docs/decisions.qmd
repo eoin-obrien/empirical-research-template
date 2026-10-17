@@ -6,6 +6,9 @@ A dated log of decisions that affect the results. Add new entries at the
 bottom and do not edit old ones. If a decision is reversed, add a new entry
 that points back to the original.
 
+A change that departs from a frozen protocol is an amendment, not a
+decision. Record it in `docs/amendments/`.
+
 ## Template
 
 ### YYYY-MM-DD: Short title

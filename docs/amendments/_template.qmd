@@ -1,0 +1,11 @@
+---
+title: "Amendment: Short title"
+date: YYYY-MM-DD
+---
+
+- **Protocol section:** which part of `docs/protocol.qmd` this departs from.
+- **Change:** what the analysis now does instead.
+- **Reason:**
+- **Timing:** made before or after seeing any results, and which.
+- **Affected analyses and outputs:**
+- **Supersedes:** an earlier amendment, if any.

@@ -9,7 +9,11 @@ These rules are invariants. If a task would break one, stop and ask.
 - Add entries to `paper/references.bib` only through the reference workflow
   in `docs/workflow.qmd`. Never write BibTeX while drafting prose.
 - Never change models, exclusions, metrics or hypotheses to obtain a desired
-  result. Record every such change, with its reason, in `docs/decisions.qmd`.
+  result. Record every such change, with its reason: in `docs/amendments/`
+  if it departs from a frozen protocol, otherwise in `docs/decisions.qmd`.
+- Never edit the files listed in `protocol/manifest.toml` after the protocol
+  is frozen, and never write `protocol/lock.json` except through
+  `just freeze-protocol`.
 - Keep exploratory and confirmatory analyses distinct. Never present an
   exploratory result as confirmatory.
 
@@ -24,8 +28,9 @@ These rules are invariants. If a task would break one, stop and ask.
 
 ## Code
 
-- Canonical analyses live in `src/research/`.
+- Canonical analyses live in `src/research/`. They implement the protocol or
+  a documented amendment.
 - Scripts in `scripts/` orchestrate library code. They do not contain
   analysis logic.
-- Notebooks in `notebooks/` are exploratory. Nothing canonical depends on
-  them.
+- Notebooks in `notebooks/` and outputs in `results/exploratory/` are
+  exploratory. Nothing canonical depends on them.

@@ -1,0 +1,3 @@
+# Files frozen by `just freeze-protocol`, relative to the repository root.
+# Once protocol/lock.json exists, this list and those files must not change.
+files = ["docs/protocol.qmd"]
